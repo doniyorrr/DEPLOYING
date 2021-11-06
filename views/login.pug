@@ -1,0 +1,7 @@
+extends layout 
+block content 
+    form(action="/login/log" method="POST" )
+     .row
+        input(type="text" name="username" , placeholder="loginingizni kiriting")
+        input(type="text" name="password" , placeholder="password kiriting")
+        button.btn-danger(type="submit") Jonatish

@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    box-sizing: border-box;
+}
+.navbar{
+    background: #002f34;
+}
+.card_product{
+    background: #dc3545;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.card_product .card_img{
+    width: 100%;
+    height: 200px;
+    background: #000;
+    position: relative;
+}
+.card_product .card_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.card_product .card_img .sale{
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background: #000;
+    color: white;
+}
+
+.card_products .card_img {
+    width: 100%;
+    height: 500px;
+    background: #000;
+    position: relative;
+}
+
+.card_products .card_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.card_products .card_img .sale {
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background: #000;
+    color: white;
+}
+
+
+.card_product .card_text{
+    padding: 20px;
+}
+.card_product .card_text .price{
+    display: flex;
+    justify-content: space-between;
+}
+.card_product .card_text .price p{
+    margin: 0;
+}
+.card_product .card_text .product_bottom p{
+    margin: 0;
+
+}
+form{
+    margin-top: 20px;
+}
+form input , select , textarea , button{
+    margin: 10px;
+}
+.form_search{
+    display: flex;
+    margin: 0;
+
+}
+.form_search input{
+    background: none;
+    color: white;
+}
+.form_search button{
+    background: none;
+    color: white;
+    border: none;
+}
+
+
+.kurs{
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.kurs p{
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

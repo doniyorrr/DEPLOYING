@@ -1,0 +1,40 @@
+//- nav.navbar.navbar-expand-lg.navbar-light.bg-danger
+//-     .container-fluid
+//-         a.navbar-brand(href='/') Bosh sahifa
+//-         ul.navbar-nav.me-auto.mb-2.mb-lg-0
+//-             li.nav-item
+//-             a.nav-link(href='/add') Mahsulot qoshish sahifasi
+//-         form(action="/search" class="form_search")
+//-             input(type="text" name="search" placeholder="nima qidirayabsiz")
+//-             button Qidirish    
+        
+nav.navbar.navbar-expand-lg.navbar-dark
+  .container-fluid
+      a.navbar-brand(href='/') Olx
+      form.form-inline.d-flex.my-2.my-lg-0(action="/search" class="search")
+        input.form-control.mr-sm-2.w-75(type='text' name="search" placeholder='Search' aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+      if user
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.btn.btn-success.nav-link.active(aria-current='page' href='/product/add') E'lon berish
+      if !user  
+        a.btn.btn-danger.profile.d-flex.align-items-center.ml-3(href="/account/acc") sign up
+        a.btn.btn-success.log_in(href="/login/log") sign in
+      else 
+       a.btn.btn-success(href="/account/logout") log out  
+      .kurs 
+       if kurs
+        each valuta in kurs
+          if valuta.Ccy=="USD"
+           p= valuta.Ccy 
+           p= valuta.Rate
+       else 
+        each valuta in kurs ? valuta : []
+          if valuta.Ccy=="USD"
+           p= valuta.Ccy 
+           p= valuta.Rate
+//- if user
+//-  ul.navbar-nav.me-auto.mb-2.mb-lg-0
+//-   li.nav-item
+//-    a.btn.btn-success.nav- 

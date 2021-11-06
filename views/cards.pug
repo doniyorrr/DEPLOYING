@@ -1,0 +1,52 @@
+extends layout 
+block content
+ h1= title 
+ .container 
+  .row 
+    .col-7
+     .card_products() 
+      .cards_img 
+       img(src="/"+datas.photo, alt="rasm")
+       p.sale= datas.sale
+      .card_text
+       h2= datas.title
+       .price 
+        p= datas.price
+         |$
+        p.sale_price= datas.price - (datas.price  * datas.sale / 100) 
+         | $-SALE  
+       .product_bottom 
+        p.like= datas.like
+        p.date= datas.dateNow.toDateString()
+        p.category= datas.category
+        p.comments= datas.comments
+    .col-5 
+     h5.d-flex.justify-content-end() muallif
+     .user-card.d-flex.justify-content-end 
+      .user-card-img 
+       img(src="/"+prof.photo, alt="" width="50px")   
+      .user-card-info.w-75 
+       p.user_name= prof.name   
+       p.user_date= prof.dateNow.toDateString()  
+       p.user_phone= prof.phone 
+     .user-product 
+      h3 Muallifning boshqa elonlari   
+       .banner_user.d-flex 
+        each dat in db 
+         if dat.dirUser == prof.id
+          if dat.id != datas.id
+           .banner-user 
+            img.w-75(src="/"+dat.photo, alt="")
+           .banner-user 
+            a(href="/product/"+dat.id)= dat.title 
+            p= dat.price 
+             | $  
+  .row 
+   .col-12  
+    if user
+     if user.id == datas.dirUser
+      .buttons.d-flex
+       .update 
+        a(href="/product/edit/"+datas.id class="btn btn-success") o'zgartirish
+       .delate 
+        a(href="/product/delete/"+datas.id class="btn btn-danger") O'chirish  

@@ -1,0 +1,25 @@
+extends layout 
+block content
+ h1= title 
+ .container 
+  .row 
+   each db in datas
+    .col-3 
+     .card_product() 
+      .card_img(userId="/product/"+db.id)
+       img(src=db.photo, alt="rasm")
+       p.sale= db.sale
+      .card_text
+       h2= db.title
+       .price 
+        p= db.price
+         |$
+        p.sale_price= db.price - (db.price  * db.sale / 100) 
+         | $-SALE  
+       .product_bottom 
+        p.likes
+         span.writeLike= db.like
+         span(userId="/"+db.id class="like ml-5") like 
+        p.date= db.dateNow.toDateString()
+        p.category= db.category
+         

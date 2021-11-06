@@ -1,0 +1,18 @@
+extends layout 
+block content 
+    form(method="POST" enctype="multipart/form-data")
+     .row
+        input(type="text" name="title" , placeholder="Mahsulot nomi")
+        input(type="text" name="price" , placeholder="Mahsulot narhi")
+        input(type="text" name="sale" , placeholder="Mahsulotning chegirmasi")
+        select(name="category")
+            option(value="car") car
+            option(value="phone")  phone
+            option(value="clothes")  clothes
+            option(value="books")  books
+            option(value="job")  job
+            option(value="other products") other products...
+        input(type="file" name="photo" )
+        textarea(name="comments", cols="30", rows="10")
+
+        button.btn-danger(type="submit") Jonatish
